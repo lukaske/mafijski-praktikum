@@ -1,0 +1,1 @@
+source ../fizikalni-praktikum-4/venv/bin/activate   
