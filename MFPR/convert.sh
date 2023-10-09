@@ -1,1 +1,1 @@
-source ../../fizikalni-praktikum-4/venv/bin/activate && jupyter nbconvert --to html --no-input index.ipynb 
+jupyter nbconvert --to html --no-input index.ipynb 

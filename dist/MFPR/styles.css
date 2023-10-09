@@ -1,0 +1,28 @@
+<style>
+.MJXc-display{display: inline !important;}
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+
+img{
+    width: 100%;
+    max-width: 600px !important;
+    margin: auto !important;
+}
+
+body {
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+table{
+    width: 100%;
+}
+
+
+</style>

@@ -1,6 +1,5 @@
 cp ./MFPR/index.html ./dist/MFPR
 cp ./MFPR/styles.css ./dist/MFPR
-cp ./MFPR/praktikum5.pdf ./dist/MFPR
 rsync -R ./MFPR/**/*.html ./dist
 rsync -R ./MFPR/**/*.jpg ./dist
 rsync -R ./MFPR/**/*.JPG ./dist
