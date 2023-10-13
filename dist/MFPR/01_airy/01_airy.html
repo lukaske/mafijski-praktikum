@@ -14585,10 +14585,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Airyjevi-funkciji">Airyjevi funkciji<a class="anchor-link" href="#Airyjevi-funkciji">¶</a></h1><h4 id="Matemati%C4%8Dno-fizikalni-praktikum,-oktober-2023">Matematično-fizikalni praktikum, oktober 2023<a class="anchor-link" href="#Matemati%C4%8Dno-fizikalni-praktikum,-oktober-2023">¶</a></h4><p><em>Luka Skeledžija, 28201079</em></p>
+<h1 id="01---Airyjevi-funkciji">01 - Airyjevi funkciji<a class="anchor-link" href="#01---Airyjevi-funkciji">¶</a></h1><p style="font-weight: 600; text-align: center;">
+Matematično-fizikalni praktikum, oktober 2023 <br/>
+Luka Skeledžija, 28201079
+</p>
 <style>
-.MJXc-display{display: inline-block !important;
-width: 100%;
+.MJXc-display{
+    display: inline-block !important;
+    width: 100%;
 }
 @media print {
     .pagebreak { page-break-before: always; } /* page-break-after works, as well */
@@ -14614,8 +14618,36 @@ table{
     width: 100%;
 }
 
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    background: #222222;
+    color: white;
+    padding: 8px;
+}
+
+blockquote {
+    margin-left: 0em!important;
+    margin-right: 0em!important;
+
+}
+
+.jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code {
+
+    background-color: var(--jp-layout-color2)!important;
+}
+
+.jp-RenderedHTMLCommon pre{
+    margin: 0.5em 0em!important;
+    padding: 0em 1.5em!important;
+}
+
+
+
+
 
 </style>
+<hr/>
 </div>
 </div>
 </div>
@@ -14625,7 +14657,7 @@ table{
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h1><p>Airyjevi funkciji $\text{Ai}$ in $\text{Bi}$ se v fiziki pojavljata predvsem v optiki in kvantni mehaniki. Definirani sta kot neodvisni rešitvi enačbe</p>
+<h2 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h2><p>Airyjevi funkciji $\text{Ai}$ in $\text{Bi}$ se v fiziki pojavljata predvsem v optiki in kvantni mehaniki. Definirani sta kot neodvisni rešitvi enačbe</p>
 <p>$$   y''(x) -xy(x) = 0, $$</p>
 <p>ki je znana kot Airyjeva oz. Stokesova enačba. To je najenostavnejša linearna diferencialna enačba drugega reda z obratno točko (tj. točko, kjer se značaj rešitev spremeni iz oscilatornega v eksponentni). Neodvisni rešitvi enačbe sta predstavljivi v integralski obliki kot</p>
 <p>$$   \text{Ai}(x) = \frac{1}{\pi} \int_0^\infty \cos (t^3/3 + x t) \,\mathrm{d} t \&gt;,\quad $$</p>
@@ -14640,227 +14672,70 @@ table{
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Naloga">Naloga<a class="anchor-link" href="#Naloga">¶</a></h1><p>Z uporabo kombinacije Maclaurinove vrste in asimptotskega razvoja poišči čim učinkovitejši postopek za izračun
+<h2 id="Naloga">Naloga<a class="anchor-link" href="#Naloga">¶</a></h2><blockquote>
+<p>Z uporabo kombinacije Maclaurinove vrste in asimptotskega razvoja poišči čim učinkovitejši postopek za izračun
 vrednosti Airyjevih funkcij $\text{Ai}$ in $\text{Bi}$ na vsej realni osi
 z <strong>absolutno</strong> napako, manjšo od $10^{-10}$. Enako naredi tudi z <strong>relativno</strong> napako in ugotovi,
 ali je tudi pri le-tej dosegljiva natančnost, manjša od $10^{-10}$.
 Pri oceni napak si pomagaj s programi, ki znajo računati s poljubno
 natančnostjo.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>[-15.         -14.96996997 -14.93993994 -14.90990991 -14.87987988
- -14.84984985 -14.81981982 -14.78978979 -14.75975976 -14.72972973
- -14.6996997  -14.66966967 -14.63963964 -14.60960961 -14.57957958
- -14.54954955 -14.51951952 -14.48948949 -14.45945946 -14.42942943
- -14.3993994  -14.36936937 -14.33933934 -14.30930931 -14.27927928
- -14.24924925 -14.21921922 -14.18918919 -14.15915916 -14.12912913
- -14.0990991  -14.06906907 -14.03903904 -14.00900901 -13.97897898
- -13.94894895 -13.91891892 -13.88888889 -13.85885886 -13.82882883
- -13.7987988  -13.76876877 -13.73873874 -13.70870871 -13.67867868
- -13.64864865 -13.61861862 -13.58858859 -13.55855856 -13.52852853
- -13.4984985  -13.46846847 -13.43843844 -13.40840841 -13.37837838
- -13.34834835 -13.31831832 -13.28828829 -13.25825826 -13.22822823
- -13.1981982  -13.16816817 -13.13813814 -13.10810811 -13.07807808
- -13.04804805 -13.01801802 -12.98798799 -12.95795796 -12.92792793
- -12.8978979  -12.86786787 -12.83783784 -12.80780781 -12.77777778
- -12.74774775 -12.71771772 -12.68768769 -12.65765766 -12.62762763
- -12.5975976  -12.56756757 -12.53753754 -12.50750751 -12.47747748
- -12.44744745 -12.41741742 -12.38738739 -12.35735736 -12.32732733
- -12.2972973  -12.26726727 -12.23723724 -12.20720721 -12.17717718
- -12.14714715 -12.11711712 -12.08708709 -12.05705706 -12.02702703
- -11.996997   -11.96696697 -11.93693694 -11.90690691 -11.87687688
- -11.84684685 -11.81681682 -11.78678679 -11.75675676 -11.72672673
- -11.6966967  -11.66666667 -11.63663664 -11.60660661 -11.57657658
- -11.54654655 -11.51651652 -11.48648649 -11.45645646 -11.42642643
- -11.3963964  -11.36636637 -11.33633634 -11.30630631 -11.27627628
- -11.24624625 -11.21621622 -11.18618619 -11.15615616 -11.12612613
- -11.0960961  -11.06606607 -11.03603604 -11.00600601 -10.97597598
- -10.94594595 -10.91591592 -10.88588589 -10.85585586 -10.82582583
- -10.7957958  -10.76576577 -10.73573574 -10.70570571 -10.67567568
- -10.64564565 -10.61561562 -10.58558559 -10.55555556 -10.52552553
- -10.4954955  -10.46546547 -10.43543544 -10.40540541 -10.37537538
- -10.34534535 -10.31531532 -10.28528529 -10.25525526 -10.22522523
- -10.1951952  -10.16516517 -10.13513514 -10.10510511 -10.07507508
- -10.04504505 -10.01501502  -9.98498498  -9.95495495  -9.92492492
-  -9.89489489  -9.86486486  -9.83483483  -9.8048048   -9.77477477
-  -9.74474474  -9.71471471  -9.68468468  -9.65465465  -9.62462462
-  -9.59459459  -9.56456456  -9.53453453  -9.5045045   -9.47447447
-  -9.44444444  -9.41441441  -9.38438438  -9.35435435  -9.32432432
-  -9.29429429  -9.26426426  -9.23423423  -9.2042042   -9.17417417
-  -9.14414414  -9.11411411  -9.08408408  -9.05405405  -9.02402402
-  -8.99399399  -8.96396396  -8.93393393  -8.9039039   -8.87387387
-  -8.84384384  -8.81381381  -8.78378378  -8.75375375  -8.72372372
-  -8.69369369  -8.66366366  -8.63363363  -8.6036036   -8.57357357
-  -8.54354354  -8.51351351  -8.48348348  -8.45345345  -8.42342342
-  -8.39339339  -8.36336336  -8.33333333  -8.3033033   -8.27327327
-  -8.24324324  -8.21321321  -8.18318318  -8.15315315  -8.12312312
-  -8.09309309  -8.06306306  -8.03303303  -8.003003    -7.97297297
-  -7.94294294  -7.91291291  -7.88288288  -7.85285285  -7.82282282
-  -7.79279279  -7.76276276  -7.73273273  -7.7027027   -7.67267267
-  -7.64264264  -7.61261261  -7.58258258  -7.55255255  -7.52252252
-  -7.49249249  -7.46246246  -7.43243243  -7.4024024   -7.37237237
-  -7.34234234  -7.31231231  -7.28228228  -7.25225225  -7.22222222
-  -7.19219219  -7.16216216  -7.13213213  -7.1021021   -7.07207207
-  -7.04204204  -7.01201201  -6.98198198  -6.95195195  -6.92192192
-  -6.89189189  -6.86186186  -6.83183183  -6.8018018   -6.77177177
-  -6.74174174  -6.71171171  -6.68168168  -6.65165165  -6.62162162
-  -6.59159159  -6.56156156  -6.53153153  -6.5015015   -6.47147147
-  -6.44144144  -6.41141141  -6.38138138  -6.35135135  -6.32132132
-  -6.29129129  -6.26126126  -6.23123123  -6.2012012   -6.17117117
-  -6.14114114  -6.11111111  -6.08108108  -6.05105105  -6.02102102
-  -5.99099099  -5.96096096  -5.93093093  -5.9009009   -5.87087087
-  -5.84084084  -5.81081081  -5.78078078  -5.75075075  -5.72072072
-  -5.69069069  -5.66066066  -5.63063063  -5.6006006   -5.57057057
-  -5.54054054  -5.51051051  -5.48048048  -5.45045045  -5.42042042
-  -5.39039039  -5.36036036  -5.33033033  -5.3003003   -5.27027027
-  -5.24024024  -5.21021021  -5.18018018  -5.15015015  -5.12012012
-  -5.09009009  -5.06006006  -5.03003003  -5.          -4.96996997
-  -4.93993994  -4.90990991  -4.87987988  -4.84984985  -4.81981982
-  -4.78978979  -4.75975976  -4.72972973  -4.6996997   -4.66966967
-  -4.63963964  -4.60960961  -4.57957958  -4.54954955  -4.51951952
-  -4.48948949  -4.45945946  -4.42942943  -4.3993994   -4.36936937
-  -4.33933934  -4.30930931  -4.27927928  -4.24924925  -4.21921922
-  -4.18918919  -4.15915916  -4.12912913  -4.0990991   -4.06906907
-  -4.03903904  -4.00900901  -3.97897898  -3.94894895  -3.91891892
-  -3.88888889  -3.85885886  -3.82882883  -3.7987988   -3.76876877
-  -3.73873874  -3.70870871  -3.67867868  -3.64864865  -3.61861862
-  -3.58858859  -3.55855856  -3.52852853  -3.4984985   -3.46846847
-  -3.43843844  -3.40840841  -3.37837838  -3.34834835  -3.31831832
-  -3.28828829  -3.25825826  -3.22822823  -3.1981982   -3.16816817
-  -3.13813814  -3.10810811  -3.07807808  -3.04804805  -3.01801802
-  -2.98798799  -2.95795796  -2.92792793  -2.8978979   -2.86786787
-  -2.83783784  -2.80780781  -2.77777778  -2.74774775  -2.71771772
-  -2.68768769  -2.65765766  -2.62762763  -2.5975976   -2.56756757
-  -2.53753754  -2.50750751  -2.47747748  -2.44744745  -2.41741742
-  -2.38738739  -2.35735736  -2.32732733  -2.2972973   -2.26726727
-  -2.23723724  -2.20720721  -2.17717718  -2.14714715  -2.11711712
-  -2.08708709  -2.05705706  -2.02702703  -1.996997    -1.96696697
-  -1.93693694  -1.90690691  -1.87687688  -1.84684685  -1.81681682
-  -1.78678679  -1.75675676  -1.72672673  -1.6966967   -1.66666667
-  -1.63663664  -1.60660661  -1.57657658  -1.54654655  -1.51651652
-  -1.48648649  -1.45645646  -1.42642643  -1.3963964   -1.36636637
-  -1.33633634  -1.30630631  -1.27627628  -1.24624625  -1.21621622
-  -1.18618619  -1.15615616  -1.12612613  -1.0960961   -1.06606607
-  -1.03603604  -1.00600601  -0.97597598  -0.94594595  -0.91591592
-  -0.88588589  -0.85585586  -0.82582583  -0.7957958   -0.76576577
-  -0.73573574  -0.70570571  -0.67567568  -0.64564565  -0.61561562
-  -0.58558559  -0.55555556  -0.52552553  -0.4954955   -0.46546547
-  -0.43543544  -0.40540541  -0.37537538  -0.34534535  -0.31531532
-  -0.28528529  -0.25525526  -0.22522523  -0.1951952   -0.16516517
-  -0.13513514  -0.10510511  -0.07507508  -0.04504505  -0.01501502
-   0.01501502   0.04504505   0.07507508   0.10510511   0.13513514
-   0.16516517   0.1951952    0.22522523   0.25525526   0.28528529
-   0.31531532   0.34534535   0.37537538   0.40540541   0.43543544
-   0.46546547   0.4954955    0.52552553   0.55555556   0.58558559
-   0.61561562   0.64564565   0.67567568   0.70570571   0.73573574
-   0.76576577   0.7957958    0.82582583   0.85585586   0.88588589
-   0.91591592   0.94594595   0.97597598   1.00600601   1.03603604
-   1.06606607   1.0960961    1.12612613   1.15615616   1.18618619
-   1.21621622   1.24624625   1.27627628   1.30630631   1.33633634
-   1.36636637   1.3963964    1.42642643   1.45645646   1.48648649
-   1.51651652   1.54654655   1.57657658   1.60660661   1.63663664
-   1.66666667   1.6966967    1.72672673   1.75675676   1.78678679
-   1.81681682   1.84684685   1.87687688   1.90690691   1.93693694
-   1.96696697   1.996997     2.02702703   2.05705706   2.08708709
-   2.11711712   2.14714715   2.17717718   2.20720721   2.23723724
-   2.26726727   2.2972973    2.32732733   2.35735736   2.38738739
-   2.41741742   2.44744745   2.47747748   2.50750751   2.53753754
-   2.56756757   2.5975976    2.62762763   2.65765766   2.68768769
-   2.71771772   2.74774775   2.77777778   2.80780781   2.83783784
-   2.86786787   2.8978979    2.92792793   2.95795796   2.98798799
-   3.01801802   3.04804805   3.07807808   3.10810811   3.13813814
-   3.16816817   3.1981982    3.22822823   3.25825826   3.28828829
-   3.31831832   3.34834835   3.37837838   3.40840841   3.43843844
-   3.46846847   3.4984985    3.52852853   3.55855856   3.58858859
-   3.61861862   3.64864865   3.67867868   3.70870871   3.73873874
-   3.76876877   3.7987988    3.82882883   3.85885886   3.88888889
-   3.91891892   3.94894895   3.97897898   4.00900901   4.03903904
-   4.06906907   4.0990991    4.12912913   4.15915916   4.18918919
-   4.21921922   4.24924925   4.27927928   4.30930931   4.33933934
-   4.36936937   4.3993994    4.42942943   4.45945946   4.48948949
-   4.51951952   4.54954955   4.57957958   4.60960961   4.63963964
-   4.66966967   4.6996997    4.72972973   4.75975976   4.78978979
-   4.81981982   4.84984985   4.87987988   4.90990991   4.93993994
-   4.96996997   5.           5.03003003   5.06006006   5.09009009
-   5.12012012   5.15015015   5.18018018   5.21021021   5.24024024
-   5.27027027   5.3003003    5.33033033   5.36036036   5.39039039
-   5.42042042   5.45045045   5.48048048   5.51051051   5.54054054
-   5.57057057   5.6006006    5.63063063   5.66066066   5.69069069
-   5.72072072   5.75075075   5.78078078   5.81081081   5.84084084
-   5.87087087   5.9009009    5.93093093   5.96096096   5.99099099
-   6.02102102   6.05105105   6.08108108   6.11111111   6.14114114
-   6.17117117   6.2012012    6.23123123   6.26126126   6.29129129
-   6.32132132   6.35135135   6.38138138   6.41141141   6.44144144
-   6.47147147   6.5015015    6.53153153   6.56156156   6.59159159
-   6.62162162   6.65165165   6.68168168   6.71171171   6.74174174
-   6.77177177   6.8018018    6.83183183   6.86186186   6.89189189
-   6.92192192   6.95195195   6.98198198   7.01201201   7.04204204
-   7.07207207   7.1021021    7.13213213   7.16216216   7.19219219
-   7.22222222   7.25225225   7.28228228   7.31231231   7.34234234
-   7.37237237   7.4024024    7.43243243   7.46246246   7.49249249
-   7.52252252   7.55255255   7.58258258   7.61261261   7.64264264
-   7.67267267   7.7027027    7.73273273   7.76276276   7.79279279
-   7.82282282   7.85285285   7.88288288   7.91291291   7.94294294
-   7.97297297   8.003003     8.03303303   8.06306306   8.09309309
-   8.12312312   8.15315315   8.18318318   8.21321321   8.24324324
-   8.27327327   8.3033033    8.33333333   8.36336336   8.39339339
-   8.42342342   8.45345345   8.48348348   8.51351351   8.54354354
-   8.57357357   8.6036036    8.63363363   8.66366366   8.69369369
-   8.72372372   8.75375375   8.78378378   8.81381381   8.84384384
-   8.87387387   8.9039039    8.93393393   8.96396396   8.99399399
-   9.02402402   9.05405405   9.08408408   9.11411411   9.14414414
-   9.17417417   9.2042042    9.23423423   9.26426426   9.29429429
-   9.32432432   9.35435435   9.38438438   9.41441441   9.44444444
-   9.47447447   9.5045045    9.53453453   9.56456456   9.59459459
-   9.62462462   9.65465465   9.68468468   9.71471471   9.74474474
-   9.77477477   9.8048048    9.83483483   9.86486486   9.89489489
-   9.92492492   9.95495495   9.98498498  10.01501502  10.04504505
-  10.07507508  10.10510511  10.13513514  10.16516517  10.1951952
-  10.22522523  10.25525526  10.28528529  10.31531532  10.34534535
-  10.37537538  10.40540541  10.43543544  10.46546547  10.4954955
-  10.52552553  10.55555556  10.58558559  10.61561562  10.64564565
-  10.67567568  10.70570571  10.73573574  10.76576577  10.7957958
-  10.82582583  10.85585586  10.88588589  10.91591592  10.94594595
-  10.97597598  11.00600601  11.03603604  11.06606607  11.0960961
-  11.12612613  11.15615616  11.18618619  11.21621622  11.24624625
-  11.27627628  11.30630631  11.33633634  11.36636637  11.3963964
-  11.42642643  11.45645646  11.48648649  11.51651652  11.54654655
-  11.57657658  11.60660661  11.63663664  11.66666667  11.6966967
-  11.72672673  11.75675676  11.78678679  11.81681682  11.84684685
-  11.87687688  11.90690691  11.93693694  11.96696697  11.996997
-  12.02702703  12.05705706  12.08708709  12.11711712  12.14714715
-  12.17717718  12.20720721  12.23723724  12.26726727  12.2972973
-  12.32732733  12.35735736  12.38738739  12.41741742  12.44744745
-  12.47747748  12.50750751  12.53753754  12.56756757  12.5975976
-  12.62762763  12.65765766  12.68768769  12.71771772  12.74774775
-  12.77777778  12.80780781  12.83783784  12.86786787  12.8978979
-  12.92792793  12.95795796  12.98798799  13.01801802  13.04804805
-  13.07807808  13.10810811  13.13813814  13.16816817  13.1981982
-  13.22822823  13.25825826  13.28828829  13.31831832  13.34834835
-  13.37837838  13.40840841  13.43843844  13.46846847  13.4984985
-  13.52852853  13.55855856  13.58858859  13.61861862  13.64864865
-  13.67867868  13.70870871  13.73873874  13.76876877  13.7987988
-  13.82882883  13.85885886  13.88888889  13.91891892  13.94894895
-  13.97897898  14.00900901  14.03903904  14.06906907  14.0990991
-  14.12912913  14.15915916  14.18918919  14.21921922  14.24924925
-  14.27927928  14.30930931  14.33933934  14.36936937  14.3993994
-  14.42942943  14.45945946  14.48948949  14.51951952  14.54954955
-  14.57957958  14.60960961  14.63963964  14.66966967  14.6996997
-  14.72972973  14.75975976  14.78978979  14.81981982  14.84984985
-  14.87987988  14.90990991  14.93993994  14.96996997  15.        ]
-</pre>
+</blockquote>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Ubran-pristop-in-re%C5%A1itev-problema">Ubran pristop in rešitev problema<a class="anchor-link" href="#Ubran-pristop-in-re%C5%A1itev-problema">¶</a></h2><p>V okviru tega poročila bomo izdelali Pythonski paket <code>fastAiry.py</code>, ki ga bomo lahko uporabili za učinkovit izračun Airyjevih funcij $\text{Ai}$ in $\text{Bi}$. Funkciji sta definirani na celotni realni osi, njuna izračunana vrednost pa se mora nahajati v okviru neke poljubne absolutne oz. relativne napake. Paket bomo intenzivno testirali na primeru, ko je zahtevana relativna in absolutna napaka manjša od $ 10^{-10}$.</p>
+<p><strong>Lastnosti Airyjevih funkcij</strong></p>
+<p>Funkciji $\text{Ai}$ in $\text{Bi}$ sta definirani na celotni realni osi. Za vrednosti $ x \in \mathbb{R}^-$ sta obe funkciji oscilatorni in omejeni. Za $ x \in \mathbb{R}^+ \cup \{0\}$ pa je funkcija $\text{Ai}$ omejena, medtem ko $\text{Bi}$ narašča čez vse meje.</p>
+<p><img alt="Airy Functions" src="./media/airyf.png"/></p>
+<blockquote>
+<p>Graf funkcij $\text{Ai}$ in $\text{Bi}$</p>
+</blockquote>
+<p><strong>Matematični pristop in potencialne težave</strong></p>
+<p>Za izračun vrednosti funkcij integralov ne bomo neposredno izvrednotili, temveč bomo funkcije razvili v Maclaurinovo in asimptotsko vrsto. Pri tem bomo pazili, da formule implementiramo rekurzivno in tako čim bolj zmanjšamo število potrebnih računskih operacij. Na grobo ocenimo, da z uporabo rekurzivnih formul zmanjšamo časovno zahtevnost programa iz $O(n^2)$ na $O(n)$, kar v računalniškem lingu razume kot "iz zelo počasi v precej hitro".</p>
+<p>Za natančnost bomo poskrbeli z ustreznim izborom števila členov v Maclaurinovi oz. asimptotski vrsti. Ker ena vrsta podaja dober približek za zelo majhne vrednosti $x$, druga pa za zelo velike, bomo vrste v točki $x_0$ zlepili. Točko $x_0$ bomo določili na podlagi števila členov, ki jih potrebuja ena in druga vrsta za doseganje tolerirane napake.</p>
+<p>Potencialne težave bodo (in tudi so) predstavljale predvsem: omejitve podatkovnega tipa <code>float</code>, iskanje zanesljive referenčne vrednosti za oceno napak in iskanje minimuma napake glede na število členov asimptotske vrste.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Referen%C4%8Dna-funkcija">Referenčna funkcija<a class="anchor-link" href="#Referen%C4%8Dna-funkcija">¶</a></h2><p>Za primerjavo naših vrst z referenčno vrednostjo lahko uporabimo funkciji <code>mpmath.airyai()</code> in <code>mpmath.airybi()</code> iz Pythonskega paketa <code>mpmath</code>. Ker bo to naša osnova za nadaljevanje, je smiselno preveriti, če ti dve funkciji dejansko delujeta pravilno oz. dovolj natančno glede na definicijo Airyjevih funkcij.</p>
+<p>Z uporabo programa <code>Wolfram Mathematica</code> numerično integriramo definiciji funkcij $ \text{Ai} $ in $ \text{Bi} $ v nekaj testnih točkah s sledečimi nastavitvami:</p>
+<pre><code>
+x = 20;
+
+integrandA[t_] := Cos[t^3/3 + x*t];
+NIntegrate[integrandA[t], {t, 0, Infinity}, PrecisionGoal -&gt; 30, AccuracyGoal -&gt; 30, WorkingPrecision -&gt; 50];
+
+integrandB[t_] := Exp[-t^3/3 + x*t] + Sin[t^3/3 + x*t];
+NIntegrate[integrandB[t], {t, 0, Infinity}, PrecisionGoal -&gt; 30, AccuracyGoal -&gt; 30, WorkingPrecision -&gt; 50];
+
+</code></pre>
+<p>Rezultate primarjamo s funkcijama <code>mpmath.airyai()</code> in <code>mpmath.airybi()</code>, ki ju nastavimo na 50 decimalk.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Maclaurinov-pribli%C5%BEek">Maclaurinov približek<a class="anchor-link" href="#Maclaurinov-pribli%C5%BEek">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
 </div>
 </body>
 </html>
