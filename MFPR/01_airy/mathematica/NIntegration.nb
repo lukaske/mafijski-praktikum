@@ -1,0 +1,245 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[      8977,        244]
+NotebookOptionsPosition[      8253,        219]
+NotebookOutlinePosition[      8644,        235]
+CellTagsIndexPosition[      8601,        232]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"xValues", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "5"}], ",", "15", ",", "1"}], "}"}]}], "]"}]}], ";"}], 
+   " ", "\n", 
+   RowBox[{
+    RowBox[{"results", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"header", "=", 
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", ",", "\"\<Ai\>\"", ",", "\"\<Bi\>\""}], "}"}]}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"results", "=", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"results", ",", "header"}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"integrandA", "[", 
+      RowBox[{"t_", ",", "x_"}], "]"}], ":=", 
+     RowBox[{"Cos", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"t", "^", "3"}], "/", "3"}], "+", 
+       RowBox[{"x", "*", "t"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"integrandB", "[", 
+      RowBox[{"t_", ",", "x_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"t", "^", "3"}]}], "/", "3"}], "+", 
+        RowBox[{"x", "*", "t"}]}], "]"}], "+", 
+      RowBox[{"Sin", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"t", "^", "3"}], "/", "3"}], "+", 
+        RowBox[{"x", "*", "t"}]}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "<=", 
+      RowBox[{"Length", "[", "xValues", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", 
+     RowBox[{
+      RowBox[{"x", "=", 
+       RowBox[{"xValues", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"resultA", "=", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"integrandA", "[", 
+          RowBox[{"t", ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}], ",", 
+         RowBox[{"PrecisionGoal", "->", "22"}], ",", 
+         RowBox[{"AccuracyGoal", "->", "22"}], ",", 
+         RowBox[{"WorkingPrecision", "->", "60"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"resultB", "=", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"integrandB", "[", 
+          RowBox[{"t", ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}], ",", 
+         RowBox[{"PrecisionGoal", "->", "22"}], ",", 
+         RowBox[{"AccuracyGoal", "->", "22"}], ",", 
+         RowBox[{"WorkingPrecision", "->", "60"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"results", "=", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"results", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"resultA", " ", "/", " ", "Pi"}], ",", 
+           RowBox[{"resultB", " ", "/", " ", "Pi"}]}], "}"}]}], "]"}]}], 
+      ";"}]}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"xValues", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"x", ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "15", ",", "22", ",", "1"}], "}"}]}], "]"}]}], 
+    ";"}], " ", "\n", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"integrandA", "[", 
+      RowBox[{"t_", ",", "x_"}], "]"}], ":=", 
+     RowBox[{"Cos", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"t", "^", "3"}], "/", "3"}], "+", 
+       RowBox[{"x", "*", "t"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"integrandB", "[", 
+      RowBox[{"t_", ",", "x_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          RowBox[{"t", "^", "3"}]}], "/", "3"}], "+", 
+        RowBox[{"x", "*", "t"}]}], "]"}], "+", 
+      RowBox[{"Sin", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"t", "^", "3"}], "/", "3"}], "+", 
+        RowBox[{"x", "*", "t"}]}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\n", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "<=", 
+      RowBox[{"Length", "[", "xValues", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", 
+     RowBox[{
+      RowBox[{"x", "=", 
+       RowBox[{"xValues", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"resultA", "=", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"integrandA", "[", 
+          RowBox[{"t", ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}], ",", 
+         RowBox[{"PrecisionGoal", "->", "20"}], ",", 
+         RowBox[{"AccuracyGoal", "->", "20"}], ",", 
+         RowBox[{"WorkingPrecision", "->", "60"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"resultB", "=", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"integrandB", "[", 
+          RowBox[{"t", ",", "x"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}], ",", 
+         RowBox[{"PrecisionGoal", "->", "35"}], ",", 
+         RowBox[{"AccuracyGoal", "->", "35"}], ",", 
+         RowBox[{"WorkingPrecision", "->", "60"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"results", "=", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"results", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{"resultA", " ", "/", " ", "Pi"}], ",", 
+           RowBox[{"resultB", " ", "/", " ", "Pi"}]}], "}"}]}], "]"}]}], 
+      ";"}]}], "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Export", "[", 
+    RowBox[{
+    "\"\</Users/luka/Documents/GitHub/mafijski-praktikum/MFPR/01_airy/\
+mathematica/all_nint.csv\>\"", ",", "results", ",", "\"\<CSV\>\""}], "]"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellFrame->{{0, 0}, {0, 0}},
+ CellChangeTimes->{{3.9062080323856688`*^9, 3.906208077756824*^9}, {
+   3.906208185276423*^9, 3.9062082213229427`*^9}, {3.90620830922388*^9, 
+   3.906208359236744*^9}, {3.906208449677075*^9, 3.906208453727524*^9}, {
+   3.9062085303791113`*^9, 3.906208536611678*^9}, {3.9062109214735823`*^9, 
+   3.906210946081416*^9}, {3.906210989719851*^9, 3.906211005657218*^9}, {
+   3.906211053007913*^9, 3.906211053071781*^9}, {3.906211107651626*^9, 
+   3.906211173747892*^9}, 3.906211247710268*^9, {3.90621139050134*^9, 
+   3.906211477547987*^9}, {3.9062115347184677`*^9, 3.9062115501819963`*^9}, {
+   3.9062116571473083`*^9, 3.906211657782495*^9}, {3.906211753088032*^9, 
+   3.906211765523075*^9}, {3.906212087389546*^9, 3.9062121406227303`*^9}, {
+   3.906212173164445*^9, 3.906212176570627*^9}, 3.9062122680386066`*^9, {
+   3.9062133202282476`*^9, 
+   3.906213322771007*^9}},ExpressionUUID->"92c6ee4c-5190-45b1-bf60-\
+11a9db7a6d3c"],
+
+Cell[BoxData["\<\"/Users/luka/Documents/GitHub/mafijski-praktikum/MFPR/01_\
+airy/mathematica/all_nint.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.906208042384152*^9, 3.906208079047724*^9, 3.90620811405617*^9, {
+   3.906208353101939*^9, 3.906208377788436*^9}, 3.906208475473297*^9, {
+   3.906210937857085*^9, 3.906210965199057*^9}, {3.906211007587552*^9, 
+   3.9062110280501127`*^9}, 3.906211077408887*^9, 3.9062111933318777`*^9, 
+   3.9062112642283287`*^9, {3.9062114662666388`*^9, 3.9062114962647943`*^9}, 
+   3.906211541108471*^9, 3.906211578883761*^9, 3.9062116876606493`*^9, 
+   3.9062117998150063`*^9, 3.906212135076737*^9, 3.906212168604081*^9, 
+   3.906212213392742*^9},
+ CellLabel->
+  "Out[214]=",ExpressionUUID->"fec86026-8856-4595-b5bb-e49a6a1a51e0"]
+}, Open  ]],
+
+Cell[BoxData["\[AliasDelimiter]"], "Input",
+ CellChangeTimes->{
+  3.906208113011362*^9},ExpressionUUID->"31bd11ff-7092-4548-ab56-\
+05a0b50eb92e"]
+},
+WindowSize->{1496, 843},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"34f14a66-18a9-4233-9ac4-dc0863f0cac4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[422, 15, 6903, 182, 598, "Input",ExpressionUUID->"92c6ee4c-5190-45b1-bf60-11a9db7a6d3c"],
+Cell[7328, 199, 761, 12, 34, "Output",ExpressionUUID->"fec86026-8856-4595-b5bb-e49a6a1a51e0"]
+}, Open  ]],
+Cell[8104, 214, 145, 3, 30, "Input",ExpressionUUID->"31bd11ff-7092-4548-ab56-05a0b50eb92e"]
+}
+]
+*)
+
