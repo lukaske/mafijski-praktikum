@@ -39,8 +39,8 @@ napake = mp.matrix(1, natancnost.size)
 for i, n in enumerate(natancnost):
     A_i, B_i = airy_asimp_pos(x, n)
     A_i_ref, B_i_ref = mp.airyai(x), mp.airybi(x)
-    print(n, B_i_ref - wolfram_ref)
-    napake[i] = np.abs(B_i_ref - wolfram_ref)
+    print(n, B_i_ref - B_i)
+    napake[i] = np.abs(B_i_ref - B_i)
 
 plt.plot(natancnost, napake)
 plt.yscale('log')
