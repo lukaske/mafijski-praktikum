@@ -1,5 +1,7 @@
-<style>
-.MJXc-display{display: inline !important;}
+.MJXc-display{
+    display: inline-block !important;
+    width: 100%;
+}
 @media print {
     .pagebreak { page-break-before: always; } /* page-break-after works, as well */
 }
@@ -24,5 +26,43 @@ table{
     width: 100%;
 }
 
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    background: #222222;
+    color: white;
+    padding: 8px;
+}
 
-</style>
+blockquote {
+    margin-left: 0em!important;
+    margin-right: 0em!important;
+
+}
+
+.jp-RenderedHTMLCommon pre, .jp-RenderedHTMLCommon code {
+
+    background-color: var(--jp-layout-color2)!important;
+}
+
+.jp-RenderedHTMLCommon pre{
+    margin: 0.5em 0em!important;
+    padding: 0em 1.5em!important;
+}
+
+body {
+    counter-reset: h2counter;
+}
+h1 {
+    counter-reset: h2counter;
+}
+h2:before {
+    content: counter(h2counter) ".\0000a0\0000a0";
+    counter-increment: h2counter;
+    counter-reset: h3counter;
+}
+h3:before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+  
+}
