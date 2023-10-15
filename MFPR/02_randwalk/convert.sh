@@ -1,0 +1,1 @@
+jupyter nbconvert --to html --no-input 02_randwalk.ipynb 
