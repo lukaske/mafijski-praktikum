@@ -7724,7 +7724,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Slike-sprehodov-in-poletov">Slike sprehodov in poletov<a class="anchor-link" href="#Slike-sprehodov-in-poletov">¶</a></h2><p>Slike poletov oz. sprehodov bomo generirali s Paretovo porazdelitvijo s štirimi različnimi parametri $\mu = a + 1$. Čas poleta bo sorazmeren s številom korakov, čas sprehoda pa z vsoto dolžine korakov. Ker gre za razliko v časnovni odvisnosti, bo slika pozicije v $xy$ ravnini enaka za polete in sprehode. V tabeli označimo vrednosti $\mu$, $\text{seed}$, $n$, $t_f$ (čas trajanja poleta).</p>
+<h2 id="Slike-sprehodov-in-poletov">Slike sprehodov in poletov<a class="anchor-link" href="#Slike-sprehodov-in-poletov">¶</a></h2><p>Slike poletov oz. sprehodov bomo generirali s Paretovo porazdelitvijo s štirimi različnimi parametri $\mu = a + 1$. Čas poleta bo sorazmeren s številom korakov, čas sprehoda pa z vsoto dolžine korakov. Ker je med sprehodi in poleti različna le časovna odvisnost pozicije, bo sled poti v $xy$ ravnini enaka za polete in sprehode. V tabeli označimo vrednosti $\mu$, $\text{seed}$, $n$, $t_f$ (čas trajanja poleta).</p>
 </div>
 </div>
 </div>
@@ -7842,8 +7842,8 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Klasifikacija-difuzijskih-re%C5%BEimov">Klasifikacija difuzijskih režimov<a class="anchor-link" href="#Klasifikacija-difuzijskih-re%C5%BEimov">¶</a></h2><p>Sedaj za vsak $\mu$ in $n = 10^4$ iz tabele 1 ustvarimo dodatnih 300 simulacij z različnimi vrednostmi $\text{seed}$, da dobimo (približno) statistično reprezentativen nabor podatkov. V nadaljni analizi bomo s pomočjo dodatnih simulacij namreč določili režim difuzije.</p>
-<p>Z dodatnimi simulacijami prikažemo obnašanje večjega števila delcev skozi čas. To lahko grafično ponazorimo z naslednjo animacijo.</p>
+<h2 id="Klasifikacija-difuzijskih-re%C5%BEimov">Klasifikacija difuzijskih režimov<a class="anchor-link" href="#Klasifikacija-difuzijskih-re%C5%BEimov">¶</a></h2><p>Za vsak $\mu$ in $n = 10^4$ iz tabele 1 ustvarimo dodatnih 300 simulacij z različnimi vrednostmi $\text{seed}$, da dobimo (približno) statistično reprezentativen nabor podatkov. V nadaljni analizi bomo s pomočjo teh simulacij namreč določili še režim difuzije.</p>
+<p>Ker imamo sedaj na voljo 300 simulacij za vsak $\mu$, lahko animiramo difuzijo v nekem (ustreznem) fizikalnem sistemu s 300 delci, ki se gibljejo po dani porazdelitvi.</p>
 </div>
 </div>
 </div>
@@ -7865,7 +7865,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Pri nadaljni analizi odvisnosti "razmazanosti" od časa namesto klasične variance uporabimo robustno mero "median absolute deviation" oz. $\mathrm{MAD}$. Izračunamo jo za vse simulacije za vsak $t$ pri poletih in sprehodih. Tedaj na logaritemski graf prilagajamo premico in tako določimo odvisnost spreminjanja $\mathrm{MAD}$ (oz. "razmazanosti") s časom. Trdimo, da je $\mathrm{MAD}^2(t) \sim \sigma^2(t) \sim t^\gamma$ in tako dobimo relativno dobro oceno za kvantifikator režima difuzije $\gamma$.</p>
+<p>V nadaljni analizi nas bo zanimala odvisnost "razmazanosti" od časa. Namesto klasične variance bomo uporabili robustno mero "median absolute deviation" oz. $\mathrm{MAD}$. Izračunamo jo za vse simulacije za vsak $t$ pri poletih in sprehodih. Tedaj na logaritemski graf prilagajamo premico in s tem določimo odvisnost spreminjanja $\mathrm{MAD}$ (oz. "razmazanosti") s časom. Trdimo, da je $\mathrm{MAD}^2(t) \sim \sigma^2(t) \sim t^\gamma$ in tako dobimo relativno dobro oceno za kvantifikator režima difuzije $\gamma$.</p>
 </div>
 </div>
 </div>
@@ -7875,7 +7875,7 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Poleti">Poleti<a class="anchor-link" href="#Poleti">¶</a></h3><p>Sedaj poskusimo določiti režim difuzije v interpretaciji poletov.</p>
+<h3 id="Poleti">Poleti<a class="anchor-link" href="#Poleti">¶</a></h3><p>Po opisanem postopku sedaj izračunamo vrednosti za polete.</p>
 </div>
 </div>
 </div>
@@ -7959,9 +7959,9 @@ $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sprehodi">Sprehodi<a class="anchor-link" href="#Sprehodi">¶</a></h3><p>Gibanje, ki ga opazujemo, lahko interpretiramo tudi s sprehodi. Prej simulirano gibanje delcev, kjer se je spreminjala hitrost in je vsak korak trajal enako dolgo, moramo za opazovanje sprehodov transformirati (interpolirati) tako, da je sedaj konstantna hitrost. Čas sprehoda pa je sorazmeren s prehojeno potjo in ne več s številom korakov. Uporabimo naslednjo formulo, kjer naredimo napako oz. pribli\ek in razdaljo koraka zaokrožimo na najbližje celo število. Velja</p>
+<h3 id="Sprehodi">Sprehodi<a class="anchor-link" href="#Sprehodi">¶</a></h3><p>Gibanje, ki ga opazujemo, lahko interpretiramo tudi s sprehodi. Prej simulirano gibanje delcev, kjer se je spreminjala hitrost in je vsak korak trajal enako dolgo, moramo za opazovanje sprehodov transformirati (interpolirati). V sliki sprehodov je sedaj konstantna hitrost, čas sprehoda pa je sorazmeren s prehojeno potjo in ne več s številom korakov. Uporabimo naslednjo formulo, kjer naredimo napako oz. približek in razdaljo koraka zaokrožimo na najbližje celo število. Velja</p>
 <p>$$
-t_{\text{walk}} = \sum_n \; \frac{\text{round}[ \, d(x_n - x_{n-1}) \,]}{\overline{v}}, \quad \overline{v} = 1
+t_{\text{walk}} = \sum_n \; \frac{\text{round}[ \, d(x_n - x_{n-1}) \,]}{\overline{v}}, \quad \overline{v} = 1.
 $$</p>
 </div>
 </div>
@@ -8054,7 +8054,7 @@ $$
 p(t) \propto t^{-\nu} \&gt;,
 $$
 kjer $1 &lt; \nu &lt; 2$.</p>
-<p>V našem primeru se odličimo za $\nu = 1.9$, saj se čas sprehoda konkretno podaljša (pri izbranem $\nu$ pa je ta efekt najmanjši in posledično dobimo hitrejši izračun).</p>
+<p>V našem primeru se odločimo za $\nu = 1.9$, saj se čas sprehoda z dodajanjem "sticking time" konkretno podaljša (pri izbranem $\nu$ pa je ta efekt najmanjši in posledično dobimo hitrejši izračun).</p>
 </div>
 </div>
 </div>
@@ -8138,7 +8138,7 @@ kjer $1 &lt; \nu &lt; 2$.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Ugotovimo, da zaradi dodajanja "sticking time" naš režim difuzije prede v območje sub-difuzije (<a href="https://physics.emory.edu/faculty/weeks/research/rwalk2.html">ref slike</a>).</p>
+<p>Ugotovimo, da zaradi dodajanja "sticking time" naš režim prede v območje sub-difuzije (<a href="https://physics.emory.edu/faculty/weeks/research/rwalk2.html">ref slike</a>).</p>
 <p><img alt="Rezimi" src="./media/symnice.gif"/></p>
 </div>
 </div>
