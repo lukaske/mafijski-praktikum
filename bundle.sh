@@ -7,6 +7,7 @@ rsync -R ./MFPR/**/**/*.JPG ./dist
 rsync -R ./MFPR/**/**/*.jpeg ./dist
 rsync -R ./MFPR/**/**/*.JPEG ./dist
 rsync -R ./MFPR/**/**/*.mov ./dist
+rsync -R ./MFPR/**/**/*.mp4 ./dist
 rsync -R ./MFPR/**/**/*.png ./dist
 rsync -R ./MFPR/**/**/*.PNG ./dist
 rsync -R ./MFPR/**/**/*.gif ./dist
