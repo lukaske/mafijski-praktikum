@@ -4,6 +4,14 @@
 			"path": "."
 		}
 	],
-	"settings": {	
+	"settings": {
+		"files.associations": {
+			"*.pyx": "cython",
+			"ostream": "cpp",
+			"fstream": "cpp",
+			"string": "cpp",
+			"iostream": "cpp",
+			"vector": "cpp"
+		}
 },
 }
