@@ -51,7 +51,7 @@ std::pair<int, int> find_pivot(const Eigen::MatrixXd& A) {
     return std::make_pair(p, q);
 }
 
-pair<MatrixXd, MatrixXd> Jacobi(MatrixXd A, double precision = 1e-2, int max_iter = 5) {
+pair<MatrixXd, MatrixXd> Jacobi(MatrixXd A, double precision = 1e-2, int max_iter = 10) {
     int n = A.rows();
     MatrixXd A_ = A;
     MatrixXd D_ = MatrixXd::Identity(n, n);
@@ -65,7 +65,7 @@ pair<MatrixXd, MatrixXd> Jacobi(MatrixXd A, double precision = 1e-2, int max_ite
                 int p = pivot.first;
                 int q = pivot.second;
                 double t;
-                if (abs(A_(p, q)) < precision) {
+                if (abs(A_(p, q)) < 1e-10) {
                     t = 0.0;
                 }
                 double theta = (A_(q, q) - A_(p, p)) / (2 * A_(p, q));
@@ -97,6 +97,19 @@ static std::string toString(const Eigen::MatrixXd& mat){
     return ss.str();
 }
 
+std::vector<float> cumulativeSum(const std::vector<float>& input) {
+    std::vector<float> result;
+    float sum = 0.0f;
+
+    for (const float& value : input) {
+        sum += value;
+        result.push_back(sum);
+    }
+
+    return result;
+}
+
+
 int main() {
 
     // Read the JSON data from a file
@@ -117,6 +130,8 @@ int main() {
     }
 
     vector<MatrixXd> eigenvalues;
+    vector<int> N;
+    vector<double> num_precision;
     vector<float> iter_time;
     double total_time = 0;
     
@@ -126,7 +141,7 @@ int main() {
     for (int i = 0; i < 98; i = i + 5) {
         //cout << "Matrix " << i + 2 << endl;
         auto start = chrono::high_resolution_clock::now();
-        pair<MatrixXd, MatrixXd> result = Jacobi(matrices[i]);
+        pair<MatrixXd, MatrixXd> result = Jacobi(matrices[i], i+2, 10);
         auto end = std::chrono::high_resolution_clock::now();
         chrono::duration<double> duration = end - start;
         ns d = chrono::duration_cast<ns>(duration);
@@ -134,7 +149,8 @@ int main() {
         total_time += time;
         iter_time.push_back(time);
         eigenvalues.push_back(result.first);
-
+        num_precision.push_back(off_diag_norm(result.first));
+        N.push_back(i+2);
         cout << "Execution time: " << i << " is " << time << " milliseconds" << endl;
     }
 
@@ -160,12 +176,14 @@ int main() {
     }
 
     // Add matrices, iter_time, and total_time to the JSON object
-    resultJSON["total_time"] = total_time;
+    resultJSON["total_time"] = cumulativeSum(iter_time);;
     resultJSON["iter_time"] = iter_time;
     resultJSON["matrices"] = eigenvaluesJSON;
+    resultJSON["num_precision"] = num_precision;
+    resultJSON["N"] = N;
 
     // Write the JSON to a file
-    std::ofstream outputFile("cpp_benchmark.json");
+    std::ofstream outputFile("jacobi_benchmark.json");
     outputFile << resultJSON.dump(4);
     outputFile.close();
 
