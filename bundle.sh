@@ -12,3 +12,4 @@ rsync -R ./MFPR/**/**/*.png ./dist
 rsync -R ./MFPR/**/**/*.PNG ./dist
 rsync -R ./MFPR/**/**/*.gif ./dist
 rsync -R ./MFPR/**/**/*.GIF ./dist
+rsync -R ./MFPR/**/**/*.wav ./dist
