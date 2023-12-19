@@ -6,3 +6,4 @@ seaborn
 markdown
 latex
 ipykernel
+ipywidgets
