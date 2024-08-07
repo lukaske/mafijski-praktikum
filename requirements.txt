@@ -1,0 +1,9 @@
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+markdown
+latex
+ipykernel
+ipywidgets
