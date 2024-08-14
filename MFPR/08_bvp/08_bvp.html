@@ -7569,7 +7569,56 @@ h3:before {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h2>
+<h2 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h2><p>Pri robnem problemu lastnih vrednosti poznamo diferencialno enačbo
+in nekaj robnih pogojev (običajno vsaj toliko, kolikor je red enačbe)
+Za rešitev problema moramo v splošnem v enem zamahu določiti
+tako (lastne) funkcije, ki ustrezajo danim robnim pogojem,
+kot (lastne) vrednosti, ki skupaj zadoščajo diferencialni enačbi.
+Reševanje robnih problemov je zato lahko bistveno bolj zapleteno
+kot integracija začetnih problemov.</p>
+<p>Numerično bomo reševali stacionarno Schrodingerjevo enačbo</p>
+<p>\begin{equation*}
+-\frac{\hbar^2}{2m}\,\frac{d^2\psi}{dx^2} + V(x)\psi = E\psi  
+\end{equation*}</p>
+<p>za neskončno potencialno jamo ($V(-a/2 &lt; x &lt; a/2)=0$
+in $V(|x|\ge a/2)\to\infty$) ter za končno potencialno jamo
+($V(|x|\ge a/2)=V_0$), za kateri poznamo analitične rešitve;
+glej Strnad, Fizika II.  Dva značilna pristopa, diferenčna
+metoda in strelska metoda, nas bosta pripravila na resnejše probleme,
+za katere analitičnih rešitev ne poznamo.</p>
+<p>Pri {\sl diferenčni metodi/} razdelimo interval
+$[-a/2,a/2]$ na $N$ točk ($x_i = -a/2 + ia/N$) in prepišemo drugi
+krajevni odvod v drugo diferenco, tako da ima brezdimenzijska enačba obliko
+\begin{equation*}
+\frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{h^2} + E\psi_i = 0  
+\end{equation*}
+oziroma
+\begin{equation*}
+\psi_{i-1} - (2-\lambda)\psi_i + \psi_{i+1} = 0 \&gt;,  
+\end{equation*}
+kjer je $\lambda=Eh^2=k^2h^2$.  Diskretizirati je treba tudi robna
+pogoja pri $x=-a/2$ in $x=a/2$, ki sta v splošnem (in tudi
+pri končni jami) mešanega tipa,
+\begin{align*}
+c_1 \psi_0 + c_2 \frac{\psi_1 - \psi_{-1}}{2h} =&amp; 0 \&gt;, \\
+d_1 \psi_N + d_2 \frac{\psi_{N+1} - \psi_{N-1}}{2h} =&amp; 0 \&gt;,
+\end{align*}
+medtem ko sta pri neskončni jami preprostejša, $\psi_0=\psi_N=0$.
+V primerih potencialnih jam tako dobimo tridiagonalni sistem $N$
+oziroma $N-1$ linearnih enačb
+\begin{equation*}
+A \underline{\psi} = \lambda \underline{\psi}   
+\end{equation*}
+za lastne vektorje $\underline{\psi}$ in lastne vrednosti $\lambda$,
+ki ga rešujemo z diagonalizacijo.</p>
+<p>Pri <em>strelski metodi</em> začnemo s <em>kosinusnim</em> začetnim pogojem
+v izhodišču $\psi(0)=1$, $\psi'(0)=0$ ali <em>sinusnim</em> pogojem
+$\psi(0)=0$, $\psi'(0)=1$, nato pa z nekim izbranim $E$ diferencialno
+enačbo s poljubno integracijsko shemo (npr.~RK4) integriramo do roba
+$x=a/2$ in tam preverimo, ali je izpolnjen drugi robni pogoj, $\psi(a/2)=0$.
+Vrednost $E$ spreminjamo tako dolgo, dokler robni pogoj ni izpolnjen do
+zahtevane natančnosti, in tako dobimo sode in lihe rešitve enačbe
+skupaj z ustreznimi lastnimi vrednostmi energije.</p>
 </div>
 </div>
 </div>
