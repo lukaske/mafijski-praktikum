@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>09_spectral</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7481,9 +7481,9 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Matemati%C4%8Dno-fizikalni-praktikum">Matematično-fizikalni praktikum<a class="anchor-link" href="#Matemati%C4%8Dno-fizikalni-praktikum">¶</a></h1><p style="font-weight: 600; text-align: center;">
-Fakulteta za matematiko in fiziko, 2023 <br/>
-Luka Skeledžija
+<h1 id="09---Spektralne-metode-za-za%C4%8Detne-probleme-PDE">09 - Spektralne metode za začetne probleme PDE<a class="anchor-link" href="#09---Spektralne-metode-za-za%C4%8Detne-probleme-PDE">¶</a></h1><p style="font-weight: 600; text-align: center;">
+Matematično-fizikalni praktikum, avgust 2024 <br/>
+Luka Skeledžija, 28201079
 </p>
 <style>
 .MJXc-display{
@@ -7569,52 +7569,68 @@ h3:before {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Spletna stran vsebuje poročila vaj pri predmetu Matematično-fizikalni praktikum na <a href="https://www.fmf.uni-lj.si/sl/">Fakulteti za matematiko in fiziko</a>.</p>
+<h2 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h2><p>Pri robnem problemu lastnih vrednosti poznamo diferencialno enačbo
+in nekaj robnih pogojev (običajno vsaj toliko, kolikor je red enačbe)
+Za rešitev problema moramo v splošnem v enem zamahu določiti
+tako (lastne) funkcije, ki ustrezajo danim robnim pogojem,
+kot (lastne) vrednosti, ki skupaj zadoščajo diferencialni enačbi.
+Reševanje robnih problemov je zato lahko bistveno bolj zapleteno
+kot integracija začetnih problemov.</p>
+<p>Numerično bomo reševali stacionarno Schrodingerjevo enačbo</p>
+<p>\begin{equation*}
+-\frac{\hbar^2}{2m}\,\frac{d^2\psi}{dx^2} + V(x)\psi = E\psi  
+\end{equation*}</p>
+<p>za neskončno potencialno jamo ($V(-a/2 &lt; x &lt; a/2)=0$
+in $V(|x|\ge a/2)\to\infty$) ter za končno potencialno jamo
+($V(|x|\ge a/2)=V_0$), za kateri poznamo analitične rešitve;
+glej Strnad, Fizika II.  Dva značilna pristopa, diferenčna
+metoda in strelska metoda, nas bosta pripravila na resnejše probleme,
+za katere analitičnih rešitev ne poznamo.</p>
+<p>Pri <em>diferenčni metodi</em> razdelimo interval
+$[-a/2,a/2]$ na $N$ točk ($x_i = -a/2 + ia/N$) in prepišemo drugi
+krajevni odvod v drugo diferenco, tako da ima brezdimenzijska enačba obliko
+\begin{equation*}
+\frac{\psi_{i-1} - 2\psi_i + \psi_{i+1}}{h^2} + E\psi_i = 0  
+\end{equation*}
+oziroma
+\begin{equation*}
+\psi_{i-1} - (2-\lambda)\psi_i + \psi_{i+1} = 0 \&gt;,  
+\end{equation*}
+kjer je $\lambda=Eh^2=k^2h^2$.  Diskretizirati je treba tudi robna
+pogoja pri $x=-a/2$ in $x=a/2$, ki sta v splošnem (in tudi
+pri končni jami) mešanega tipa,
+\begin{align*}
+c_1 \psi_0 + c_2 \frac{\psi_1 - \psi_{-1}}{2h} =&amp; 0 \&gt;, \\
+d_1 \psi_N + d_2 \frac{\psi_{N+1} - \psi_{N-1}}{2h} =&amp; 0 \&gt;,
+\end{align*}
+medtem ko sta pri neskončni jami preprostejša, $\psi_0=\psi_N=0$.
+V primerih potencialnih jam tako dobimo tridiagonalni sistem $N$
+oziroma $N-1$ linearnih enačb
+\begin{equation*}
+A \underline{\psi} = \lambda \underline{\psi}   
+\end{equation*}
+za lastne vektorje $\underline{\psi}$ in lastne vrednosti $\lambda$,
+ki ga rešujemo z diagonalizacijo.</p>
+<p>Pri <em>strelski metodi</em> začnemo s <em>kosinusnim</em> začetnim pogojem
+v izhodišču $\psi(0)=1$, $\psi'(0)=0$ ali <em>sinusnim</em> pogojem
+$\psi(0)=0$, $\psi'(0)=1$, nato pa z nekim izbranim $E$ diferencialno
+enačbo s poljubno integracijsko shemo (npr.~RK4) integriramo do roba
+$x=a/2$ in tam preverimo, ali je izpolnjen drugi robni pogoj, $\psi(a/2)=0$.
+Vrednost $E$ spreminjamo tako dolgo, dokler robni pogoj ni izpolnjen do
+zahtevane natančnosti, in tako dobimo sode in lihe rešitve enačbe
+skupaj z ustreznimi lastnimi vrednostmi energije.</p>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Vaje">Vaje<a class="anchor-link" href="#Vaje">¶</a></h4><ol>
-<li><a href="./01_airy/01_airy.html">Airyjevi funkciji</a></li>
-<li><a href="./02_randwalk/02_randwalk.html">Naključni sprehodi</a></li>
-<li><a href="./03_eigenstates/03_eigenstates.html">Lastne vrednosti in lastni vektorji</a></li>
-<li><a href="./04_DFT/04_DFT.html">Diskretna Fourierova Transformacija</a></li>
-<li><a href="./05_FFT/05_FFT.html">Hitra Fourierova Transformacija (FFT)</a></li>
-<li><a href="./06_firstorder/06_firstorder.html">Enačbe hoda - DE 1. reda</a></li>
-<li><a href="./07_newton/07_newton.html">Newtonov zakon</a></li>
-<li><a href="./08_bvp/08_bvp.html">Robni problem lastnih vrednosti</a></li>
-<li><a href="./09_spectral/09_spectral.html">Spektralne metode za začetne probleme PDE</a></li>
-<li>unknown</li>
-<li>unknown</li>
-<li>unknown</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Orodja</strong>: Vse vaje so napisane v <a href="https://jupyter.org/">Jupyter Notebooku</a> za programski jezik Python. Uporabljene knjižnice: <code>numpy</code>, <code>matplotlib</code>, <code>scipy</code> in <code>pandas</code>. V HTMl prevedeno s komando <code>jupyter nbconvert --to html --no-input index.ipynb</code>. Dodaten CSS se prekopira direktno v Markdown: <a href="./styles.css">prenesi CSS</a>.</p>
-</blockquote>
+<h2 id="Zaklju%C4%8Dek">Zaključek<a class="anchor-link" href="#Zaklju%C4%8Dek">¶</a></h2><hr/>
+<p>Luka Skeledžija, <a href="https://github.com/lukaske/mafijski-praktikum/tree/main/MFPR/09_spectral">Github source 🔗</a>, 2024</p>
 </div>
 </div>
 </div>
