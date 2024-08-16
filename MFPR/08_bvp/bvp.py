@@ -56,7 +56,7 @@ def shoot( f, a, b, z1, z2, t, tol ):
     y = rk4( f, [a,z1], t )
     w1 = y[n-1,0]
 
-    print ("%2d: z = %10.3e, error = %10.3e" % ( 0, z1, b - w1 ))
+    #print ("%2d: z = %10.3e, error = %10.3e" % ( 0, z1, b - w1 ))
 
     # Begin the main loop.  We will compute the solution of a second IVP and
     # then use the both solutions to refine our estimate of y'(a).  This
@@ -75,7 +75,7 @@ def shoot( f, a, b, z1, z2, t, tol ):
         y = rk4( f, [a,z2], t )
         w2 = y[n-1,0]
 
-        print ("%2d: z = %10.3e, error = %10.3e" % ( i+1, z2, b - w2 ))
+        #print ("%2d: z = %10.3e, error = %10.3e" % ( i+1, z2, b - w2 ))
 
         # Check to see if we are done...
 
