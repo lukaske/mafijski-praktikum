@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>10_diffm</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7481,9 +7481,9 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Matemati%C4%8Dno-fizikalni-praktikum">Matematično-fizikalni praktikum<a class="anchor-link" href="#Matemati%C4%8Dno-fizikalni-praktikum">¶</a></h1><p style="font-weight: 600; text-align: center;">
-Fakulteta za matematiko in fiziko, 2023 <br/>
-Luka Skeledžija
+<h1 id="10---Diferen%C4%8Dne-metode-za-za%C4%8Detne-probleme-PDE">10 - Diferenčne metode za začetne probleme PDE<a class="anchor-link" href="#10---Diferen%C4%8Dne-metode-za-za%C4%8Detne-probleme-PDE">¶</a></h1><p style="font-weight: 600; text-align: center;">
+Matematično-fizikalni praktikum, avgust 2024 <br/>
+Luka Skeledžija, 28201079
 </p>
 <style>
 .MJXc-display{
@@ -7569,52 +7569,63 @@ h3:before {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Spletna stran vsebuje poročila vaj pri predmetu Matematično-fizikalni praktikum na <a href="https://www.fmf.uni-lj.si/sl/">Fakulteti za matematiko in fiziko</a>.</p>
+<h2 id="Uvod">Uvod<a class="anchor-link" href="#Uvod">¶</a></h2><p>Enorazsežna nestacionarna Sch"odingerjeva enačba
+\begin{equation*}
+  \left(i\hbar\frac{\partial}{dt}-H\right)\psi(x,t)=0
+\end{equation*}
+je osnovno orodje za nerelativistični opis časovnega razvoja kvantnih stanj v različnih potencialih. Tu obravnavamo samo od časa neodvisne hamiltonske operatorje
+\begin{equation*}
+  H=-\frac{\hbar^2}{2m}\frac{\partial^2}{dx^2}+V(x)\&gt;.
+\end{equation*}
+Z menjavo spremenljivk $H/\hbar\mapsto H$, $x\sqrt{m/\hbar}\mapsto x$ in $V(x\sqrt{m/\hbar})/\hbar\mapsto V(x)$, efektivno postavimo $\hbar=m=1$,
+\begin{equation}
+  H=-\frac12\frac{\partial^2}{\partial x^2}+V(x)\&gt;.
+\end{equation}</p>
+<p>Razvoj stanja $\psi(x,t)$ v stanje $\psi(x,t+\Delta t)$ opišemo s približkom
+\begin{equation}
+  \psi(x,t+\Delta t)=e^{-i H \Delta t} \psi(x,t)\approx \frac{1- \frac{1}{2} i H \Delta t}{1+ \frac{1}{2} i H \Delta t}\psi(x,t)\&gt;,
+\end{equation}
+ki je unitaren in je reda $\mathcal{O}(\Delta t^3)$. Območje $a\leq x\leq b$ diskretiziramo na krajevno mrežo $x_j=a+j\Delta x$ pri $0\leq j&lt;N$, $\Delta x = (b-a)/(N-1)$, časovni razvoj pa spremljamo ob časih $t_n=n\Delta t$. Vrednosti valovne funkcije in potenciala v mrežnih točkah ob času $t_n$ označimo $\psi(x_j,t_n)=\psi_j^n$ oziroma $V(x_j)=V_j$. Krajevni odvod izrazimo z diferenco
+\begin{equation*}
+  \Psi''(x)\approx \frac{\psi(x+\Delta x,t)-2\psi(x,t)+\psi(x-\Delta x,t)}{\Delta x^2}=\frac{\psi_{j+1}^n - 2\psi_j^n+\psi_{j-1}^n}{\Delta x^2}\&gt;.
+\end{equation*}
+Ko te približke vstavimo v enačbo razvoja in razpišemo Hamiltonov operator po enačbi Hamiltonjana, dobimo sistem enačb
+\begin{equation*}
+  \psi_j^{n+1}-i\frac{\Delta t}{4\Delta x^2}\left[\psi_{j+1}^{n+1}-2\psi_j^{n+1}+\psi_{j-1}^{n+1}\right] + i\frac{\Delta t}{2}V_j \psi_j^{n+1}=  \psi_j^{n}+i\frac{\Delta t}{4\Delta x^2}\left[\psi_{j+1}^{n}-2\psi_j^{n}+\psi_{j-1}^{n}\right] - i\frac{\Delta t}{2}V_j \psi_j^{n}\&gt;,
+\end{equation*}
+v notranjih točkah mreže, medtem ko na robu ($j\leq 0$ in $j\geq N$) postavimo $\psi_j^n=0$. Vrednosti valovne funkcije v točkah $x_j$ uredimo v vektor
+\begin{equation*}
+\boldsymbol{\Psi}^n=(\psi_1^n,\ldots,\psi_{N-1}^n)^T
+\end{equation*}
+in sistem prepišemo v matrično obliko
+\begin{equation*}
+  \mathsf{A}\boldsymbol{\Psi}^{n+1}=\mathsf{A}^\ast \boldsymbol{\Psi}^n,\qquad
+  \mathsf{A}=\begin{pmatrix}
+  d_1 &amp; a \\
+  a   &amp; d_2 &amp; a \\
+  &amp; a &amp; d_3 &amp; a \\
+  &amp; &amp; \ddots &amp; \ddots &amp; \ddots \\
+  &amp; &amp; &amp; a &amp; d_{N-2} &amp; a \\
+  &amp; &amp; &amp; &amp; a &amp; d_{N-1}
+  \end{pmatrix}\&gt;,
+\end{equation*}
+kjer je</p>
+<p>\begin{equation*}
+  b= i \frac{\Delta t}{2 \Delta x^2},\qquad a=-\frac{b}{2},\qquad d_j = 1+b+ i \frac{\Delta t}{2}V_j\&gt;.
+\end{equation*}</p>
+<p>Dobili smo torej matrični sistem, ki ga moramo rešiti v vsakem časovnem koraku, da iz stanja $\boldsymbol{\Psi}^n$ dobimo stanje $\boldsymbol{\Psi}^{n+1}$. Matrika $\mathsf{A}$ in vektor $\boldsymbol{\Psi}$ imata kompleksne elemente, zato račun najlažje opraviš v kompleksni aritmetiki <code>from cmath import *</code> za kompleksne funkcije v Pythonu (sama kompleksna aritmetika pa je vgrajena). Izkaže se, da so za zadovoljivo natančnost višji redi nujni (glej dodatni del naloge).</p>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Vaje">Vaje<a class="anchor-link" href="#Vaje">¶</a></h4><ol>
-<li><a href="./01_airy/01_airy.html">Airyjevi funkciji</a></li>
-<li><a href="./02_randwalk/02_randwalk.html">Naključni sprehodi</a></li>
-<li><a href="./03_eigenstates/03_eigenstates.html">Lastne vrednosti in lastni vektorji</a></li>
-<li><a href="./04_DFT/04_DFT.html">Diskretna Fourierova Transformacija</a></li>
-<li><a href="./05_FFT/05_FFT.html">Hitra Fourierova Transformacija (FFT)</a></li>
-<li><a href="./06_firstorder/06_firstorder.html">Enačbe hoda - DE 1. reda</a></li>
-<li><a href="./07_newton/07_newton.html">Newtonov zakon</a></li>
-<li><a href="./08_bvp/08_bvp.html">Robni problem lastnih vrednosti</a></li>
-<li><a href="./09_spectral/09_spectral.html">Spektralne metode za začetne probleme PDE</a></li>
-<li><a href="./10_diffm/10_diffm.ipynb">Diferenčne metode za začetne probleme PDE</a></li>
-<li>unknown</li>
-<li>unknown</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<br/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<blockquote>
-<p><strong>Orodja</strong>: Vse vaje so napisane v <a href="https://jupyter.org/">Jupyter Notebooku</a> za programski jezik Python. Uporabljene knjižnice: <code>numpy</code>, <code>matplotlib</code>, <code>scipy</code> in <code>pandas</code>. V HTMl prevedeno s komando <code>jupyter nbconvert --to html --no-input index.ipynb</code>. Dodaten CSS se prekopira direktno v Markdown: <a href="./styles.css">prenesi CSS</a>.</p>
-</blockquote>
+<h2 id="Zaklju%C4%8Dek">Zaključek<a class="anchor-link" href="#Zaklju%C4%8Dek">¶</a></h2><hr/>
+<p>Luka Skeledžija, <a href="https://github.com/lukaske/mafijski-praktikum/tree/main/MFPR/10_diffm">Github source 🔗</a>, 2024</p>
 </div>
 </div>
 </div>
