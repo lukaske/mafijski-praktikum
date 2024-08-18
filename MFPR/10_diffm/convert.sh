@@ -1,0 +1,1 @@
+jupyter nbconvert --to html --no-input 10_diffm.ipynb 
