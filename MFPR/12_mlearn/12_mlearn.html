@@ -7943,7 +7943,6 @@ te distribucije so na voljo v vseh popularnih ML paketih (npr. Scikit...).</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7982,7 +7981,7 @@ te distribucije so na voljo v vseh popularnih ML paketih (npr. Scikit...).</p>
 <li>aktivacijska funkcija na koncu: sigmoid</li>
 <li>optimizacijski algoritem: adam</li>
 <li>funkcija izgube: binary cross-entrophy</li>
-<li>normalizacija: brez</li>
+<li>normalizacija: na interval [0,1]</li>
 <li>število epoh: 10</li>
 <li>velikost batchov: 100</li>
 <li>odstotek za testiranje: 10 %</li>
@@ -8009,23 +8008,81 @@ te distribucije so na voljo v vseh popularnih ML paketih (npr. Scikit...).</p>
 </thead>
 <tbody>
 <tr>
-<td>Example 1</td>
-<td>0.123</td>
+<td>Osnovni parametri</td>
+<td>0.7591</td>
 </tr>
 <tr>
-<td>Example 2</td>
-<td>0.456</td>
+<td>Število nevronov: 100</td>
+<td>0.7573</td>
 </tr>
 <tr>
-<td>Example 3</td>
-<td>0.789</td>
+<td>Št. skritih slojev: 5</td>
+<td>0.7554</td>
 </tr>
 <tr>
-<td>Example 4</td>
-<td>0.101</td>
+<td>Št. skritih slojev: 50</td>
+<td>0.5000</td>
+</tr>
+<tr>
+<td>Aktivacijska funkcija: ELU</td>
+<td>0.7454</td>
+</tr>
+<tr>
+<td>Funkcija izgube: MSE</td>
+<td>0.7480</td>
+</tr>
+<tr>
+<td>Optimizacijski algoritem: SGD</td>
+<td>0.6768</td>
+</tr>
+<tr>
+<td>Optimizacijski algoritem: Adamax</td>
+<td>0.7505</td>
+</tr>
+<tr>
+<td>Velikost batcha: 1 000</td>
+<td>0.7385</td>
+</tr>
+<tr>
+<td>Velikost batcha: 10 000</td>
+<td>0.6873</td>
+</tr>
+<tr>
+<td>Število epoh: 20</td>
+<td>0.7532</td>
+</tr>
+<tr>
+<td>Odstotek za testiranje: 20 %</td>
+<td>0.7562</td>
+</tr>
+<tr>
+<td>Normalizacija: $\mu = 0$ in $\sigma = 1$</td>
+<td>0.8144</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Rezultati so relativno zanimivi. Z osnovnimi parametri smo dosegli relativno dober rezultat AUC = 0,7591, kar smo uporabili kot referenco. Povečanje skritih slojev na 50 je dramatično poslabšalo učinkovitost (AUC = 0,5000), kar kaže, da ne smemo pretiravati s kompleksnostjo topologije mreže. Tudi preprosti SGD optimizacijski algoritem je znatno znižal na AUC na 0,6768.</p>
+<p>Največje izboljšanje smo dosegli z <strong>normalizacijo</strong> (μ = 0, σ = 1), kjer je AUC narasel na 0,8144. Podatke se torej splača pravilno normirati. Drugi parametri, kot so aktivacijske funkcije in arhitektura, pa so imeli manjši vpliv.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Pretreniranje-(over-training)">Pretreniranje (over-training)<a class="anchor-link" href="#Pretreniranje-(over-training)">¶</a></h3><p>Pretreniranje je znan pojav v strojnem učenju in ga opazimo takrat, ko se model zaradi prekomernega učenja preveč specializira na podatke, na katerih se uči. Prikaz tega si lahko ogledamo spodaj. Funkcija izgube za učne podatke naglo pada, medtem ko za testne oz. validacijske podatke ostaja skoraj konstantna. Tedaj je smiselno z učenjem prenehati - temu namerno obstajajo tudi vgrajene <code>Early-Stopping</code> funkcije.</p>
+<p><img alt="slika" src="./media/pretrain.png"/></p>
 </div>
 </div>
 </div>

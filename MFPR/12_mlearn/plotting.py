@@ -13,13 +13,13 @@ def plot_history(histories, key='binary_crossentropy'):
 
     for name, history in histories:
         val = plt.plot(history.epoch, history.history['val_'+key],
-                   '--', label=name.title()+' Val')
+                   '--', label='Validacijski podatki')
         plt.plot(history.epoch, history.history[key], color=val[0].get_color(),
-             label=name.title()+' Train')
+             label='Trening podatki')
 
-    plt.xlabel('Epochs')
-    plt.title("Training History")
-    plt.ylabel(key.replace('_',' ').title())
+    plt.xlabel('Epoch')
+    plt.title("Zgodovina učenja")
+    plt.ylabel("Funkcija izgube")
     plt.legend()
     plt.show()
     plt.savefig('training_history-{}.png'.format(key))
